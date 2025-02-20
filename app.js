@@ -4,29 +4,34 @@ document.addEventListener("DOMContentLoaded", function() {
     let inputTexto = document.getElementById("texto");
 
     function addTask() {
-        if (inputTexto.value.trim() !== "") { 
+        let tarea = inputTexto.value.trim();
+        
+        if (tarea !== "") { 
             let nuevoItem = document.createElement("li");
             nuevoItem.className = "list-group-item d-flex align-items-center";
-            nuevoItem.style.listStyleType = "disc"; // Restaurar los puntos
-            
+            nuevoItem.style.margin = "3px 0"; // Margen arriba y abajo de 3px
+
             let btnEliminar = document.createElement("button");
-            btnEliminar.className = "btn btn-primary btn-sm me-3";
+            btnEliminar.className = "btn btn-danger btn-sm me-3"; 
             btnEliminar.textContent = "Borrar";
-            
-            btnEliminar.addEventListener("click", function() {
-                lista.removeChild(nuevoItem);
-                alert("Tarea Eliminada: " + textoTarea.textContent);
-            });
-            
+
             let textoTarea = document.createElement("span");
-            textoTarea.textContent = inputTexto.value;
-            
-            nuevoItem.appendChild(btnEliminar);
+            textoTarea.textContent = tarea;
+
+            btnEliminar.addEventListener("click", function() {
+                alert("Tarea Eliminada: " + tarea);
+                lista.removeChild(nuevoItem);
+            });
+
+            nuevoItem.appendChild(btnEliminar); // Botón al inicio
             nuevoItem.appendChild(textoTarea);
             lista.appendChild(nuevoItem);
 
             inputTexto.value = "";
             inputTexto.focus();
+        } else {
+            inputTexto.classList.add("is-invalid");
+            setTimeout(() => inputTexto.classList.remove("is-invalid"), 1000);
         }
     }
 
