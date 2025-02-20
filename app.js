@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             let btnEliminar = document.createElement("button");
             btnEliminar.className = "btn btn-primary btn-sm me-3";
-            btnEliminar.textContent = "Borrar Tarea";
+            btnEliminar.textContent = "Borrar";
             
           );
             
