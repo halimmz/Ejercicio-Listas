@@ -6,21 +6,21 @@ document.addEventListener("DOMContentLoaded", function() {
     function addTask() {
         if (inputTexto.value.trim() !== "") { 
             let nuevoItem = document.createElement("li");
-            nuevoItem.className = "list-group-item d-flex align-items-center gap-2 my-1"; // Menos separación
-            nuevoItem.style.listStyleType = "disc"; // Mantener los puntos de la lista
-
+            nuevoItem.className = "list-group-item d-flex align-items-center";
+            nuevoItem.style.listStyleType = "disc"; // Restaurar los puntos
+            
             let btnEliminar = document.createElement("button");
-            btnEliminar.className = "btn btn-primary btn-sm"; // No se usa float-start para evitar problemas
+            btnEliminar.className = "btn btn-primary btn-sm me-3";
             btnEliminar.textContent = "Borrar";
             
             btnEliminar.addEventListener("click", function() {
                 lista.removeChild(nuevoItem);
                 alert("Tarea Eliminada: " + textoTarea.textContent);
             });
-
+            
             let textoTarea = document.createElement("span");
             textoTarea.textContent = inputTexto.value;
-
+            
             nuevoItem.appendChild(btnEliminar);
             nuevoItem.appendChild(textoTarea);
             lista.appendChild(nuevoItem);
