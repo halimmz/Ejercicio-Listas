@@ -11,10 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
             nuevoItem.className = "list-group-item d-flex align-items-center";
             nuevoItem.style.margin = "3px 0"; // Margen arriba y abajo de 3px
 
-            let guion = document.createElement("span");
-            guion.textContent = "- ";
-            guion.className = "me-2"; // Espacio entre guion y botón
-
             let btnEliminar = document.createElement("button");
             btnEliminar.className = "btn btn-danger btn-sm me-3"; 
             btnEliminar.textContent = "Borrar";
@@ -27,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 lista.removeChild(nuevoItem);
             });
 
-            nuevoItem.appendChild(guion);
             nuevoItem.appendChild(btnEliminar); // Botón al inicio
             nuevoItem.appendChild(textoTarea);
             lista.appendChild(nuevoItem);
