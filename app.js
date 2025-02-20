@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function addTask() {
         if (inputTexto.value.trim() !== "") { 
             let nuevoItem = document.createElement("li");
-            nuevoItem.className = "list-group-item d-flex align-items-center";
+            nuevoItem.className = "list-group-item d-flex align-items-center my-3"; // Añadir margen arriba y abajo
             nuevoItem.style.listStyleType = "disc"; // Restaurar los puntos
             
             let btnEliminar = document.createElement("button");
-            btnEliminar.className = "btn btn-primary btn-sm me-3";
+            btnEliminar.className = "btn btn-primary btn-sm float-start me-3"; // Botón alineado a la izquierda
             btnEliminar.textContent = "Borrar";
             
             btnEliminar.addEventListener("click", function() {
