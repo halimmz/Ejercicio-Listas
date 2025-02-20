@@ -14,10 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
             btnEliminar.textContent = "Borrar";
             
             btnEliminar.addEventListener("click", function() {
-            lista.removeChild(nuevoItem);
-            alert("Tarea Eliminada:");
-            }
-          );
+                lista.removeChild(nuevoItem);
+                alert("Tarea Eliminada: " + textoTarea.textContent);
+            });
             
             let textoTarea = document.createElement("span");
             textoTarea.textContent = inputTexto.value;
