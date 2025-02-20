@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             btnEliminar.addEventListener("click", function() {
                 lista.removeChild(nuevoItem);
-                alert("Tarea Eliminada: ");
+                alert("Tarea Eliminada:");
             });
             
             let textoTarea = document.createElement("span");
