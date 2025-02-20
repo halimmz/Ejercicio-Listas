@@ -13,10 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             btnEliminar.className = "btn btn-primary btn-sm me-3";
             btnEliminar.textContent = "Borrar Tarea";
             
-            btnEliminar.addEventListener("click", function() {
-                lista.removeChild(nuevoItem);
-                
-            });
+          );
             
             let textoTarea = document.createElement("span");
             textoTarea.textContent = inputTexto.value;
