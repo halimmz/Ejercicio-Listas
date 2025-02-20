@@ -23,24 +23,28 @@
         .list-group-item {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            list-style-type: disc !important; /* Restaurar los puntos */
-            list-style-position: inside; /* Asegurar que se muestren correctamente */
+            gap: 10px; /* Espacio entre elementos */
+            margin: 3px 0; /* Margen arriba y abajo */
+            border: none; /* Quitar bordes */
         }
-        .btn-primary {
+        .punto {
+            font-size: 1.5rem; /* Tamaño del punto */
+            line-height: 1; /* Asegurar alineación vertical */
+            font-weight: bold;
+        }
+        .btn-danger {
             min-width: 80px;
-            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container my-5">
         <div class="task-container">
-            <h2 class="text-center mb-4">Listas Tareas</h2>
+            <h2 class="text-center mb-4">Lista de Tareas</h2>
             
             <div class="input-group mb-3">
                 <input type="text" id="texto" class="form-control" placeholder="Escribe una tarea...">
-                <button id="add" class="btn btn-primary">Añadir Tareas</button>
+                <button id="add" class="btn btn-primary">Añadir Tarea</button>
             </div>
             
             <ul class="list-group" id="task-list"></ul>
