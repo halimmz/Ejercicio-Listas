@@ -6,11 +6,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function addTask() {
         if (inputTexto.value.trim() !== "") { 
             let nuevoItem = document.createElement("li");
-            nuevoItem.className = "list-group-item d-flex align-items-center gap-2 my-1"; // Menos separación
-            nuevoItem.style.listStyleType = "disc"; // Mantener los puntos de la lista
+            nuevoItem.className = "list-group-item d-flex align-items-center gap-2 my-1"; 
+            nuevoItem.style.listStyleType = "none"; // Evitar que Bootstrap lo quite
+            
+            let punto = document.createElement("span");
+            punto.textContent = "•"; // Agregar manualmente el punto
+            punto.style.marginRight = "5px";
 
             let btnEliminar = document.createElement("button");
-            btnEliminar.className = "btn btn-primary btn-sm"; // No se usa float-start para evitar problemas
+            btnEliminar.className = "btn btn-primary btn-sm"; 
             btnEliminar.textContent = "Borrar";
             
             btnEliminar.addEventListener("click", function() {
@@ -21,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let textoTarea = document.createElement("span");
             textoTarea.textContent = inputTexto.value;
 
+            nuevoItem.appendChild(punto);
             nuevoItem.appendChild(btnEliminar);
             nuevoItem.appendChild(textoTarea);
             lista.appendChild(nuevoItem);
@@ -38,4 +43,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
