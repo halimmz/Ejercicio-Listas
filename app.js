@@ -8,15 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (tarea !== "") { 
             let nuevoItem = document.createElement("li");
-            nuevoItem.className = "list-group-item d-flex align-items-center";
-            nuevoItem.style.margin = "3px 0"; // Margen arriba y abajo de 3px
+            nuevoItem.className = "list-group-item";
 
             let punto = document.createElement("span");
-            punto.textContent = "• ";
-            punto.className = "me-2 fs-5"; // Espacio entre punto y botón, tamaño de fuente más grande
+            punto.textContent = "•";
+            punto.className = "punto"; // Aplicamos la clase CSS
 
             let btnEliminar = document.createElement("button");
-            btnEliminar.className = "btn btn-danger btn-sm me-3"; 
+            btnEliminar.className = "btn btn-danger btn-sm"; 
             btnEliminar.textContent = "Borrar";
 
             let textoTarea = document.createElement("span");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             nuevoItem.appendChild(punto);
-            nuevoItem.appendChild(btnEliminar); // Botón al inicio
+            nuevoItem.appendChild(btnEliminar);
             nuevoItem.appendChild(textoTarea);
             lista.appendChild(nuevoItem);
 
